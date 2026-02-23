@@ -11,6 +11,7 @@ Financial institutions constantly face the challenge of accurately assessing bus
 1. **Identifies** high-risk vs. low-risk businesses using predictive ML models.
 2. **Optimizes** OD limit allocations dynamically based on business health.
 3. **Strategizes** interest rate reductions to encourage healthy OD utilization without increasing default risks.
+4. **Visualizes** credit intelligence and what-if simulation scenarios via an interactive Streamlit dashboard.
 
 ### 🧪 Core Technologies
 
@@ -18,7 +19,7 @@ Financial institutions constantly face the challenge of accurately assessing bus
 - **K-Means Clustering:** Business behavior segmentation (K=4)
 - **ANN (Artificial Neural Network):** Custom risk prediction scoring via `sklearn.neural_network.MLPClassifier`
 - **Data Stack:** Pandas, Numpy, Scikit-Learn
-- **Visualization:** Matplotlib
+- **Visualization/Dashboard:** Streamlit, Matplotlib
 
 ---
 
@@ -92,6 +93,9 @@ intelligent_od_system/
 │   ├── evaluation.py          # Calculate AUC-ROC, FNR, Accuracy
 │   └── visualization.py       # Generate PCA, clustering, and elbow plots
 │   └── pipeline.py            # Master orchestrator
+├── credit_intelligence_dashboard/ # Interactive Streamlit Dashboard
+│   ├── app.py                 # Main dashboard application
+│   └── pages/                 # Dashboard pages (Risk, Clusters, Simulator, etc.)
 ├── main.py                    # Entry point to execute pipeline
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
@@ -138,7 +142,16 @@ python main.py
 
 _Note: Make sure your `1L_real_world_business_financial_stress_dataset.csv` is present in the `data/` directory before running._
 
-### 5. Review Output
+### 5. Run the Credit Intelligence Dashboard
+
+The project features a sleek Glassmorphism **Streamlit** dashboard to visually explore the generated insights and risk profiles.
+
+```bash
+cd credit_intelligence_dashboard
+streamlit run app.py
+```
+
+### 6. Review Output
 
 Once execution finishes:
 
